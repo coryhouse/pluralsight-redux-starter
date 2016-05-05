@@ -5,11 +5,11 @@
 // 3. Requires jsdom so we can test via an in-memory DOM in Node
 // 4. Sets up global vars that mimic a browser.
 
-/*eslint-disable no-var*/
+/* eslint-disable no-var */
 
 // This assures the .babelrc dev config (which includes
 // hot module reloading code) doesn't apply for tests.
-process.env.NODE_ENV = 'production'; // this assures the .babelrc dev config doesn't apply.
+process.env.NODE_ENV = 'production'; 
 
 // Register babel so that it will transpile ES6 to ES5
 // before our tests run.
