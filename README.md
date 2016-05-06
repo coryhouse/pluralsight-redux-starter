@@ -19,7 +19,6 @@ This will run the automated build process, start up a webserver, and open the ap
 |redux|Library for unidirectional data flows |
 |babel-cli|Babel Command line interface |
 |babel-core|Babel Core for transpiling the new JavaScript to old |
-|babel-eslint|Connects Babel and ESLint so ES6 code can be linted |
 |babel-loader|Adds Babel support to Webpack |
 |babel-plugin-react-display-name| Add displayName to React.createClass calls |
 |babel-plugin-react-transform| Add support for transforming React code to Babel |
@@ -35,6 +34,7 @@ This will run the automated build process, start up a webserver, and open the ap
 |eslint|Lints JavaScript |
 |eslint-loader|Adds ESLint support to Webpack |
 |eslint-plugin-react|Adds additional React-related rules to ESLint|
+|eslint-watch|Add watch functionality to ESLint |
 |extract-text-webpack-plugin| Extracts CSS into separate file for production build | 
 |file-loader| Adds file loading support to Webpack |
 |ignore-styles| Ignore imported style files when running in Node |
@@ -42,7 +42,6 @@ This will run the automated build process, start up a webserver, and open the ap
 |node-sass| Adds SASS support to Webpack |
 |parallelshell| Display results of multiple commands on single command line |
 |react-addons-test-utils| Adds React TestUtils |
-|redbox-react| Display nicely formatted React errors in browser |
 |rimraf|Delete files |
 |sass-loader| Adds Sass support to Webpack|
 |sinon| Standalone test spies, stubs and mocks for JavaScript |
