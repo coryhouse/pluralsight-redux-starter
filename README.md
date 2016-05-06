@@ -48,5 +48,5 @@ This will run the automated build process, start up a webserver, and open the ap
 |sinon-chai| Extends Chai with assertions for the Sinon.JS mocking framework|
 |style-loader| Add Style support to Webpack |
 |webpack| Bundler with plugin system and integrated development server |
-|webpack-dev-middleware| Used to integrate Webpack with Browser-sync |
-|webpack-hot-middleware| Use to integrate Webpack's hot reloading support with Browser-sync |
+|webpack-dev-middleware| Adds middleware support to webpack |
+|webpack-hot-middleware| Adds hot reloading to webpack |
