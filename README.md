@@ -1,5 +1,5 @@
 # Get Started
-1. **Install [Node 5.0.0 or greater](https://nodejs.org)**. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
+1. **Install [Node 4.0.0 or greater](https://nodejs.org)**. Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
 2. **Clone this repository.** - `git clone https://github.com/coryhouse/ps-redux.git` or [download the zip](https://github.com/coryhouse/pluralsight-redux-starter/archive/master.zip)
 3. **Make sure you're in the directory you just created.** - `cd ps-redux`
 4. **Install Node Packages.** - `npm install`
