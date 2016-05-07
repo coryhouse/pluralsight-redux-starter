@@ -10,7 +10,6 @@ This will run the automated build process, start up a webserver, and open the ap
 ### What are the dependencies in package.json used for?
 | **Dependency** | **Use** |
 |----------|-------|
-|connect-history-api-fallback  | Support reloading deep links |
 |babel-polyfill | Polyfill for Babel features that cannot be transpiled |
 |react|React library |
 |react-dom|React library for DOM rendering |
