@@ -42,22 +42,25 @@ This will run the automated build process, start up a webserver, and open the ap
 |css-loader|Add CSS support to Webpack|
 |enzyme|Simplified JavaScript Testing utilities for React|
 |eslint|Lints JavaScript |
-|eslint-loader|Adds ESLint support to Webpack |
+|eslint-plugin-import|Advanced linting of ES6 imports|
 |eslint-plugin-react|Adds additional React-related rules to ESLint|
 |eslint-watch|Add watch functionality to ESLint |
+|eventsource-polyfill|Polyfill to support hot reloading in IE|
 |expect|Assertion library for use with Mocha|
+|express|Serves development and production builds|
 |extract-text-webpack-plugin| Extracts CSS into separate file for production build | 
 |file-loader| Adds file loading support to Webpack |
-|ignore-styles| Ignore imported style files when running in Node |
+|jsdom|In-memory DOM for testing|
 |mocha| JavaScript testing library |
-|node-sass| Adds SASS support to Webpack |
-|parallelshell| Display results of multiple commands on single command line |
+|nock| Mock HTTP requests for testing |
+|npm-run-all| Display results of multiple commands on single command line |
+|open|Open app in default browser|
 |react-addons-test-utils| Adds React TestUtils |
+|redux-immutable-state-invariant|Warn when Redux state is mutated|
+|redux-mock-store|Mock Redux store for testing|
 |rimraf|Delete files |
-|sass-loader| Adds Sass support to Webpack|
-|sinon| Standalone test spies, stubs and mocks for JavaScript |
-|sinon-chai| Extends Chai with assertions for the Sinon.JS mocking framework|
 |style-loader| Add Style support to Webpack |
+|url-loader| Add url loading support to Webpack |
 |webpack| Bundler with plugin system and integrated development server |
 |webpack-dev-middleware| Adds middleware support to webpack |
 |webpack-hot-middleware| Adds hot reloading to webpack |
