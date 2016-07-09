@@ -8,6 +8,13 @@
 5. **Run the app.** - `npm start -s`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching files all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 6. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome.
+7. Having issues? See below.
+
+## Having Issues? Try these things first:
+1. Run `npm install` - If you forget to do this, you'll see this: `babel-node: command not found`.
+2. Make sure the path doesn't include any spaces, or install the latest version of eslint-watch which adds support for paths containing spaces: `npm install eslint-watch@2.1.13`
+3. Use [Node 5.12.0](https://nodejs.org/download/release/v5.12.0/) if you're having issues on Windows. Node 6 has issues on some Windows machines.
+4. Don't run the project from a symbolic link. It will cause issues with file watches.
 
 ###Production Dependencies
 | **Dependency** | **Use** |
@@ -64,9 +71,3 @@ This will run the automated build process, start up a webserver, and open the ap
 |webpack| Bundler with plugin system and integrated development server |
 |webpack-dev-middleware| Adds middleware support to webpack |
 |webpack-hot-middleware| Adds hot reloading to webpack |
-
-## Having Issues? Try these things first:
-1. Run `npm install` - If you forget to do this, you'll see this: babel-node: command not found.
-2. Make sure the path doesn't include any spaces, or install the latest version of eslint-watch which adds support for paths containing spaces: `npm install eslint-watch@2.1.13`
-3. Use [Node 5.12.0](https://nodejs.org/download/release/v5.12.0/) if you're having issues on Windows. Node 6 has issues on some Windows machines.
-4. Don't run the project from a symbolic link. It will cause issues with file watches.
