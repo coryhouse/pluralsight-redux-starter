@@ -11,7 +11,18 @@ const app = express();
 const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
+  // Config for minimal console.log mess.
+  noInfo: false,
+  quiet: false,
+  stats: {
+    assets: false,
+    colors: true,
+    version: false,
+    hash: false,
+    timings: false,
+    chunks: false,
+    chunkModules: false
+  },	
   publicPath: config.output.publicPath
 }));
 
