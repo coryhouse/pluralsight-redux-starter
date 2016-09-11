@@ -17,6 +17,7 @@ This will run the automated build process, start up a webserver, and open the ap
 4. Use [Node 5.12.0](https://nodejs.org/download/release/v5.12.0/) if you're having issues on Windows. Node 6 has issues on some Windows machines.
 5. Don't run the project from a symbolic link. It will cause issues with file watches.
 6. Using VSCode's built in Terminal? Try it on the native command line instead. There are known issues in recent versions of VSCode's terminal.
+7. Use path.resolve on all path references in both the dev and prod webpack.config. [See this commit](https://github.com/coryhouse/pluralsight-redux-starter/commit/298848d4332d3bec9eb4e23592e710083acaf340) for an example.
 
 ###Production Dependencies
 | **Dependency** | **Use** |
