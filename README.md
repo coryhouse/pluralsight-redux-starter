@@ -18,6 +18,7 @@ This will run the automated build process, start up a webserver, and open the ap
 5. Don't run the project from a symbolic link. It will cause issues with file watches.
 6. Using VSCode's built in Terminal? Try it on the native command line instead. There are known issues in recent versions of VSCode's terminal.
 7. Use path.resolve on all path references in both the dev and prod webpack.config. [See this commit](https://github.com/coryhouse/pluralsight-redux-starter/commit/298848d4332d3bec9eb4e23592e710083acaf340) for an example.
+8. Delete any .eslintrc that you're storing in your user directory, or [add this line](https://github.com/coryhouse/react-slingshot/blob/master/.eslintrc#L2) to the .eslintrc for this project.
 
 ###Production Dependencies
 | **Dependency** | **Use** |
