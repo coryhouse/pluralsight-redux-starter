@@ -16,11 +16,12 @@ This will run the automated build process, start up a webserver, and open the ap
 2. Make sure the path doesn't include any spaces, or install the latest version of eslint-watch which adds support for paths containing spaces: `npm install eslint-watch@2.1.13`
 3. Make sure you're running the latest version of Node.
 4. Use [Node 5.12.0](https://nodejs.org/download/release/v5.12.0/) if you're having issues on Windows. Node 6 has issues on some Windows machines.
-5. Don't run the project from a symbolic link. It will cause issues with file watches.
-6. Using VSCode's built in Terminal? Try it on the native command line instead. There are known issues in recent versions of VSCode's terminal.
-7. Use path.resolve on all path references in both the dev and prod webpack.config. [See this commit](https://github.com/coryhouse/pluralsight-redux-starter/commit/298848d4332d3bec9eb4e23592e710083acaf340) for an example.
-8. Delete any .eslintrc that you're storing in your user directory, or [add this line](https://github.com/coryhouse/react-slingshot/blob/master/.eslintrc#L2) to the .eslintrc for this project.
-9. Disable any ESLint plugin / custom rules that you've enabled within your editor since these will conflict with the ESLint rules defined in the course.
+5. Make sure files with names that begin with a dot (.babelrc, .editorconfig, .eslintrc) are copied to the project directory root. This is easy to overlook is you copy this repository manually.
+6. Don't run the project from a symbolic link. It will cause issues with file watches.
+7. Using VSCode's built in Terminal? Try it on the native command line instead. There are known issues in recent versions of VSCode's terminal.
+8. Use path.resolve on all path references in both the dev and prod webpack.config. [See this commit](https://github.com/coryhouse/pluralsight-redux-starter/commit/298848d4332d3bec9eb4e23592e710083acaf340) for an example.
+9. Delete any .eslintrc that you're storing in your user directory, or [add this line](https://github.com/coryhouse/react-slingshot/blob/master/.eslintrc#L2) to the .eslintrc for this project.
+10. Disable any ESLint plugin / custom rules that you've enabled within your editor since these will conflict with the ESLint rules defined in the course.
 
 ###Production Dependencies
 | **Dependency** | **Use** |
