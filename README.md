@@ -22,6 +22,7 @@ This will run the automated build process, start up a webserver, and open the ap
 8. Use path.resolve on all path references in both the dev and prod webpack.config. [See this commit](https://github.com/coryhouse/pluralsight-redux-starter/commit/298848d4332d3bec9eb4e23592e710083acaf340) for an example.
 9. Delete any .eslintrc that you're storing in your user directory, or [add this line](https://github.com/coryhouse/react-slingshot/blob/master/.eslintrc#L2) to the .eslintrc for this project.
 10. Disable any ESLint plugin / custom rules that you've enabled within your editor since these will conflict with the ESLint rules defined in the course.
+11. Nothing above work? Delete your node_modules folder and re-run npm install.
 
 ###Production Dependencies
 | **Dependency** | **Use** |
