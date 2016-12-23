@@ -7,6 +7,7 @@ import open from 'open';
 /* eslint-disable no-console */
 
 const port = 3000;
+const webPackPort = 3001;
 const app = express();
 const compiler = webpack(config);
 
@@ -28,3 +29,18 @@ app.listen(port, function(err) {
     open(`http://localhost:${port}`);
   }
 });
+
+import WebpackDevServer from 'webpack-dev-server';
+
+ new WebpackDevServer(webpack(config), {
+    hot: true,
+    historyApiFallback: true,
+    proxy: {
+      "*": "http://localhost:3000"
+    }
+ }).listen(3001, 'localhost', function (err, result) {
+    if (err) {
+      console.log(err);
+    }
+    console.log('Listening at localhost:3000');
+ });
