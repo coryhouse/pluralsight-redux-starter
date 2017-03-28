@@ -20,7 +20,8 @@ This will run the automated build process, start up a webserver, and open the ap
 6. Use path.resolve on all path references in both the dev and prod webpack.config. [See this commit](https://github.com/coryhouse/pluralsight-redux-starter/commit/298848d4332d3bec9eb4e23592e710083acaf340) for an example.
 7. Delete any .eslintrc in your user directory and disable any ESLint plugin / custom rules within your editor since these will conflict with the ESLint rules defined in the course.
 8. On Windows? Open your console as an administrator. This will assure the console has the necessary rights to perform installs.
-9. Nothing above work? Delete your node_modules folder and re-run npm install.
+9. Ensure you do not have NODE_ENV=production in your env variables as it will not install the devDependencies.
+10. Nothing above work? Delete your node_modules folder and re-run npm install.
 
 ###Production Dependencies
 | **Dependency** | **Use** |
