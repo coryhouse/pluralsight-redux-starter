@@ -1,4 +1,6 @@
 import React,{PropTypes} from 'react';
+import {connect} from 'react-redux';
+import * as courseActions from '../../actions/courseActions';
 //update routes.js to have access to this page; then update Header.js to have course header
 class CoursesPage extends React.Component{
   constructor(props, context){
@@ -23,16 +25,21 @@ class CoursesPage extends React.Component{
 
   onClickSave(){
    console.log("onClickSave function in CoursesPage " + this.state.course.title);
-   alert(`Saving ${this.state.course.title}`);
-  //  alert('Saving '+this.state.course.title);
+   //alert(`Saving ${this.state.course.title}`);
+   //alert('Saving '+this.state.course.title);
+  this.props.dispatch(courseActions.createCourse(this.state.course));
 
   }
-
+  courseRow(course, index){//we map over the list of courses and then call the courseRow function for each course
+    return <div key={index}>{course.title}</div>;
+  }
   render(){
+    debugger;  //we expect the render function to be called after new state occurs
     console.log("IN CoursePage" );
     return (
       <div>
         <h1>Courses</h1>
+        {this.props.courses.map(this.courseRow)}
         <h2>Add Course</h2>
         <input
           type="text"
@@ -48,4 +55,17 @@ class CoursesPage extends React.Component{
   }
 }
 
-export default CoursesPage;
+CoursesPage.PropTypes = {
+  dispatch:PropTypes.func.isRequired,
+  courses:PropTypes.array.isRequired
+};
+
+function mapStateToProps(state, ownProps){
+  debugger;
+  //we expect that when the course data changes, this mapStateToProps function would receive that new state
+  //and end up passing that state as this.props.courses to our component
+  return {
+    courses: state.courses//this 'courses' is determinted in indexjs in reducer folder
+  };
+}
+export default connect(mapStateToProps)(CoursesPage);
