@@ -27,7 +27,7 @@ class CoursesPage extends React.Component{
    console.log("onClickSave function in CoursesPage " + this.state.course.title);
    //alert(`Saving ${this.state.course.title}`);
    //alert('Saving '+this.state.course.title);
-  this.props.dispatch(courseActions.createCourse(this.state.course));
+  this.props.createCourse(this.state.course);
 
   }
   courseRow(course, index){//we map over the list of courses and then call the courseRow function for each course
@@ -56,8 +56,8 @@ class CoursesPage extends React.Component{
 }
 
 CoursesPage.PropTypes = {
-  dispatch:PropTypes.func.isRequired,
-  courses:PropTypes.array.isRequired
+  courses:PropTypes.array.isRequired,
+  createCourse: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps){
@@ -68,4 +68,10 @@ function mapStateToProps(state, ownProps){
     courses: state.courses//this 'courses' is determinted in indexjs in reducer folder
   };
 }
-export default connect(mapStateToProps)(CoursesPage);
+
+function mapDispatchToProps(dispatch){
+  return{
+    createCourse: course => dispatch(courseActions.createCourse(course))
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
