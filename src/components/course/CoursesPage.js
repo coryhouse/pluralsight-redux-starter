@@ -1,6 +1,7 @@
 import React,{PropTypes} from 'react';
 import {connect} from 'react-redux';
 import * as courseActions from '../../actions/courseActions';
+import {bindActionCreators} from 'redux';
 //update routes.js to have access to this page; then update Header.js to have course header
 class CoursesPage extends React.Component{
   constructor(props, context){
@@ -27,7 +28,7 @@ class CoursesPage extends React.Component{
    console.log("onClickSave function in CoursesPage " + this.state.course.title);
    //alert(`Saving ${this.state.course.title}`);
    //alert('Saving '+this.state.course.title);
-  this.props.createCourse(this.state.course);
+  this.props.actions.createCourse(this.state.course);
 
   }
   courseRow(course, index){//we map over the list of courses and then call the courseRow function for each course
@@ -57,7 +58,7 @@ class CoursesPage extends React.Component{
 
 CoursesPage.PropTypes = {
   courses:PropTypes.array.isRequired,
-  createCourse: PropTypes.func.isRequired
+  actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps){
@@ -71,7 +72,7 @@ function mapStateToProps(state, ownProps){
 
 function mapDispatchToProps(dispatch){
   return{
-    createCourse: course => dispatch(courseActions.createCourse(course))
+    actions: bindActionCreators(courseActions, dispatch)//map all actions to this.props.actions
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
