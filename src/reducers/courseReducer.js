@@ -1,6 +1,8 @@
+import * as types from '../actions/actionTypes';
+
 export default function courseReducer(state = [], action){//state array list of courses,
   switch(action.type){
-    case 'CREATE_COURSE' :
+    case types.CREATE_COURSE :
       debugger;
       //state.push(action.course); return state; cannot do this because state is immutable
         return [...state,//spread operator
