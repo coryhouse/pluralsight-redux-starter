@@ -6,31 +6,9 @@ import {bindActionCreators} from 'redux';
 class CoursesPage extends React.Component{
   constructor(props, context){
     super(props, context);
-
-    this.state={
-      course:{title:''}
-    }
-    //bind two functions to the 'this' of the CoursePage component
-
-   this.onTitleChange = this.onTitleChange.bind(this);
-   this.onClickSave = this.onClickSave.bind(this);
   }
 
-  onTitleChange(event){
-    console.log(" onTitleChange function in CoursesPage");
-    const course = this.state.course;
-    course.title =event.target.value;//pull value out of event off of target, then set to title
-    this.setState({course:course});//update the state
 
-  }
-
-  onClickSave(){
-   console.log("onClickSave function in CoursesPage " + this.state.course.title);
-   //alert(`Saving ${this.state.course.title}`);
-   //alert('Saving '+this.state.course.title);
-  this.props.actions.createCourse(this.state.course);
-
-  }
   courseRow(course, index){//we map over the list of courses and then call the courseRow function for each course
     return <div key={index}>{course.title}</div>;
   }
@@ -41,16 +19,6 @@ class CoursesPage extends React.Component{
       <div>
         <h1>Courses</h1>
         {this.props.courses.map(this.courseRow)}
-        <h2>Add Course</h2>
-        <input
-          type="text"
-          onChange={this.onTitleChange}
-          value={this.state.course.title} />
-
-          <input
-            type="submit"
-            onClick={this.onClickSave}
-            value="Save" />
       </div>
     );
   }
