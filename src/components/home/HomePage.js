@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 
 class HomePage extends React.Component {
   render(){
-    console.log('from HomePage');
     return (
       <div className = "jumbotron">
         <h1>Pluralsight Administration</h1>

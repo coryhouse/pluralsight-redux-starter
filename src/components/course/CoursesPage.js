@@ -2,23 +2,24 @@ import React,{PropTypes} from 'react';
 import {connect} from 'react-redux';
 import * as courseActions from '../../actions/courseActions';
 import {bindActionCreators} from 'redux';
+import CourseList from './CourseList';
 //update routes.js to have access to this page; then update Header.js to have course header
 class CoursesPage extends React.Component{
   constructor(props, context){
     super(props, context);
   }
 
-
   courseRow(course, index){//we map over the list of courses and then call the courseRow function for each course
     return <div key={index}>{course.title}</div>;
   }
+  
   render(){
-    debugger;  //we expect the render function to be called after new state occurs
-    console.log("IN CoursePage" );
+    const {courses} = this.props;
+
     return (
       <div>
         <h1>Courses</h1>
-        {this.props.courses.map(this.courseRow)}
+        <CourseList courses={courses}/>
       </div>
     );
   }
