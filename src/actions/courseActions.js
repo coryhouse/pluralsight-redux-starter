@@ -1,5 +1,16 @@
 import * as types from './actionTypes';
-export function createCourse(course){
-  debugger;
-  return { type:types.CREATE_COURSE, course};//return a object with a type property, ES6, omit if right side matches left side
+import courseApi from '../api/mockCourseApi';
+
+export function loadCoursesSuccess(courses){
+  return { type: types.LOAD_COURSES_SUCCESS, courses};
+}
+//we want to handle the promise and then dispatch an action when the promise is resolved
+export function loadCourses(){
+  return function(dispatch){
+    return courseApi.getAllCourses().then(courses => {
+      dispatch(loadCoursesSuccess(courses));
+    }).catch(error => {
+      throw(error);
+    });
+  }
 }
