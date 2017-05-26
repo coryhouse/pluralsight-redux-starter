@@ -2,12 +2,9 @@ import * as types from '../actions/actionTypes';
 
 export default function courseReducer(state = [], action){//state array list of courses,
   switch(action.type){
-    case types.CREATE_COURSE :
+    case types.LOAD_COURSES_SUCCESS:
       debugger;
-      //state.push(action.course); return state; cannot do this because state is immutable
-        return [...state,//spread operator
-        Object.assign({}, action.course)
-      ];
+        return action.course;
     default:
       return state;
   }
