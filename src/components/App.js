@@ -15,7 +15,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  chileren: PropTypes.object.inRequired
+  children: PropTypes.object.inRequired
 };
 
 export default App;
