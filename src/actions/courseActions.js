@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import courseApi from '../api/mockCourseApi';
+import {beginAjaxCall} from './ajaxStatusActions';
 
 //this action does not fire until all data has been successfully returned by API call
 export function loadCoursesSuccess(courses){
@@ -15,6 +16,7 @@ export function updateCourseSuccess(course){
 //we want to handle the promise and then dispatch an action when the promise is resolved
 export function loadCourses(){
   return function(dispatch){
+    dispatch(beginAjaxCall());
     return courseApi.getAllCourses().then(courses => {
       dispatch(loadCoursesSuccess(courses));
     }).catch(error => {
@@ -22,9 +24,10 @@ export function loadCourses(){
     });
   };
 }
-
+//thunk
 export function saveCourse(course){
   return function(dispatch, getState) {
+    dispatch(beginAjaxCall());
     return courseApi.saveCourse(course).then(savedCourse => {
       course.id ? dispatch(updateCourseSuccess(savedCourse)) :
        dispatch(createCourseSuccess(savedCourse));

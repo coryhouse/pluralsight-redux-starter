@@ -1,5 +1,6 @@
 export default {
   authors: [],
-  courses: []
-}
-//this is how the store looks like initially 
+  courses: [],
+  ajaxCallsInProgress : 0
+};
+//this is how the store looks like initially
