@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 class App extends React.Component {
   render(){//chileren will be passed in through react router
-
+console.log("this.props.loading",this.props.loading);
     return (
       <div className = 'container-fluid'>
         <Header
