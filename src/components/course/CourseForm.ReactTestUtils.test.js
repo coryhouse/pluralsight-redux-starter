@@ -4,9 +4,10 @@ import TestUtils from 'react-addons-test-utils';
 import CourseForm from './CourseForm';
 //create a setup function that will return the output of rendering the component under test
 function setup(saving){
-  let props = { course: {}, saving: saving, errors:{},},
+  let props = { course: {}, saving: saving, errors:{},
     onSave: () => {},
     onChange : () => {}
+  };
 
   let renderer = TestUtils.createRenderer();
   renderer.render(<CourseForm {...props}/>);
