@@ -24,7 +24,7 @@ export default {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [
+    loaders: [//type of files we want to handle
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
