@@ -1,5 +1,13 @@
 {
-  "presets": ["react", "es2015"],
+  "presets": ["stage-2", "es2015", "react"],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-decorators-legacy",
+    "typecheck",
+    "syntax-flow",
+    "transform-flow-strip-types",
+    "transform-async-to-generator"
+  ],
   "env": {
     "development": {
       "presets": ["react-hmre"]
