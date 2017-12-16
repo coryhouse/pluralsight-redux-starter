@@ -23,7 +23,8 @@ This will run the automated build process, start up a webserver, and open the ap
 9. Try using your OS's native command line instead of an editor's. For some people, an editor's command line configuration may cause issues. 
 10. Ensure you do not have NODE_ENV=production in your env variables as it will not install the devDependencies. To check run this on the command line: `set NODE_ENV`. If it comes back as production, you need to clear this env variable.
 11. Make sure you're using the same imports as the course demo. I've seen some people import ES6 code from node_modules via different imports like `import Route from "react-router/es6/Route";` and `import IndexRoute from "react-router/es6/IndexRoute";`. Don't do that. :) Use the exact imports I use in the course.
-12. Nothing above work? Delete your node_modules folder and re-run npm install.
+12. Reference bundle.js with a leading slash or [you'll get an unexpected token error on reload of deep links](https://github.com/coryhouse/pluralsight-redux-starter/issues/88).
+13. Nothing above work? Delete your node_modules folder and re-run npm install.
 
 ### Production Dependencies
 | **Dependency** | **Use** |
