@@ -36,7 +36,8 @@ class AuthorApi {
   }
 
   static saveAuthor(author) {
-	author = Object.assign({}, author); // to avoid manipulating object passed in.
+    // clone to avoid mutating reference passed in.
+    author = Object.assign({}, author);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
@@ -60,6 +61,7 @@ class AuthorApi {
           authors.push(author);
         }
 
+        // Just return here, since cloning at the beginning of the function instead.
         resolve(author);
       }, delay);
     });
@@ -68,9 +70,8 @@ class AuthorApi {
   static deleteAuthor(authorId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const indexOfAuthorToDelete = authors.findIndex(author => {
-          author.id == authorId;
-        });
+        // Bug fix for issue #6 - Now returns since return is implied on arrow funcs without braces.
+        const indexOfAuthorToDelete = authors.findIndex(author => author.id == authorId);
         authors.splice(indexOfAuthorToDelete, 1);
         resolve();
       }, delay);
