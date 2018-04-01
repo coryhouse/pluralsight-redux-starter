@@ -65,7 +65,6 @@ class CourseApi {
   }
 
   static saveCourse(course) {
-    course = Object.assign({}, course); // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
@@ -75,7 +74,7 @@ class CourseApi {
         }
 
         if (course.id) {
-          const existingCourseIndex = courses.findIndex(a => a.id === course.id);
+          const existingCourseIndex = courses.findIndex(a => a.id == course.id);
           courses.splice(existingCourseIndex, 1, course);
         } else {
           //Just simulating creation here.
@@ -86,7 +85,7 @@ class CourseApi {
           courses.push(course);
         }
 
-        resolve(course);
+        resolve(Object.assign({}, course));
       }, delay);
     });
   }
@@ -95,7 +94,7 @@ class CourseApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const indexOfCourseToDelete = courses.findIndex(course => {
-          course.id === courseId;
+          course.courseId == courseId;
         });
         courses.splice(indexOfCourseToDelete, 1);
         resolve();

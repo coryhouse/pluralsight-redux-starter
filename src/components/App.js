@@ -1,27 +1,30 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+// This component handles the App template used on every page.
+import React, {PropTypes} from 'react';
+import Header from './common/Header';
+import {connect} from 'react-redux';
 
-class App extends Component {
-  render () {
+class App extends React.Component {
+  render() {
     return (
-      <div className='container-fluid'>
-        <p>Header here...</p>
-        { this.props.children }
+      <div className="container-fluid">
+        <Header
+          loading={this.props.loading}
+        />
+        {this.props.children}
       </div>
     );
   }
 }
 
 App.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
-export default App;
+function mapStateToProps(state, ownProps) {
+  return {
+    loading: state.ajaxCallsInProgress > 0
+  };
+}
 
-// function mapStateToProps(state, ownProps) {
-//   return {
-//     loading: state.ajaxCallIsInProgress > 0
-//   };
-// }
-//
-// export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App);
