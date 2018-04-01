@@ -8,32 +8,25 @@
 
 /* eslint-disable no-var*/
 
-/* This setting assures the .babelrc dev config (which includes
- hot module reloading code) doesn't apply for tests.
- But also, we don't want to set it to production here for
- two reasons:
- 1. You won't see any PropType validation warnings when
- code is running in prod mode.
- 2. Tests will not display detailed error messages
- when running against production version code
+/* This setting assures the .babelrc dev config (which includes hot module reloading code) doesn't apply for tests.
+   But also, we don't want to set it to production here for two reasons:
+   1. You won't see any PropType validation warnings when code is running in prod mode.
+   2. Tests will not display detailed error messages when running against production version code
  */
 process.env.NODE_ENV = 'test';
 
-// Register babel so that it will transpile ES6 to ES5
-// before our tests run.
+// Register babel so that it will transpile ES6 to ES5 before our tests run.
 require('babel-register')();
 
-// Disable webpack-specific features for tests since
-// Mocha doesn't know what to do with them.
+// Disable webpack-specific features for tests since Mocha doesn't know what to do with them.
 require.extensions['.css'] = function () {return null;};
 require.extensions['.png'] = function () {return null;};
 require.extensions['.jpg'] = function () {return null;};
 
-// Configure JSDOM and set global variables
-// to simulate a browser environment for tests.
-var jsdom = require('jsdom').jsdom;
+// Configure JSDOM and set global variables to simulate a browser environment for tests.
+let jsdom = require('jsdom').jsdom;
 
-var exposedProperties = ['window', 'navigator', 'document'];
+let exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
 global.window = document.defaultView;
