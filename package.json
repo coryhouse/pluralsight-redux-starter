@@ -4,7 +4,7 @@
   "scripts": {},
   "dependencies": {
     "bootstrap": "4.2.1",
-    "immer": "1.11.0",
+    "immer": "1.12.1",
     "prop-types": "15.6.2",
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
