@@ -1,7 +1,9 @@
 {
   "name": "ps-redux",
   "description": "React and Redux Pluralsight course by Cory House",
-  "scripts": {},
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js --port 3000"
+  },
   "dependencies": {
     "bootstrap": "4.2.1",
     "immer": "1.12.1",
@@ -50,5 +52,43 @@
   },
   "engines": {
     "node": ">=8"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-react-app"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "no-debugger": "off",
+      "no-console": "off",
+      "no-unused-vars": "warn",
+      "react/prop-types": "warn"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   }
 }
