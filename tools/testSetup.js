@@ -21,7 +21,7 @@ process.env.NODE_ENV = 'test';
 
 // Register babel so that it will transpile ES6 to ES5
 // before our tests run.
-require('babel-register')();
+require('@babel/register')();
 
 // Disable webpack-specific features for tests since
 // Mocha doesn't know what to do with them.
@@ -31,11 +31,14 @@ require.extensions['.jpg'] = function () {return null;};
 
 // Configure JSDOM and set global variables
 // to simulate a browser environment for tests.
-var jsdom = require('jsdom').jsdom;
-
+var jsdom = require('jsdom');
+var { JSDOM } = jsdom;
+var { document } = (new JSDOM('', {
+  url: 'http://localhost'
+})).window;
+global.document = document;
 var exposedProperties = ['window', 'navigator', 'document'];
 
-global.document = jsdom('');
 global.window = document.defaultView;
 Object.keys(document.defaultView).forEach((property) => {
   if (typeof global[property] === 'undefined') {
