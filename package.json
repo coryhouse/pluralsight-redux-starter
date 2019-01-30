@@ -14,16 +14,16 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "3.3.6",
-    "jquery": "2.2.3",
+    "bootstrap": "4.2.1",
+    "jquery": "3.3.1",
     "react": "16.7.0",
     "react-dom": "16.7.0",
-    "react-redux": "4.4.5",
-    "react-router": "2.4.0",
-    "react-router-redux": "4.0.4",
-    "redux": "3.5.2",
-    "redux-thunk": "2.0.1",
-    "toastr": "2.1.2"
+    "react-redux": "6.0.0",
+    "react-router": "4.3.1",
+    "react-router-redux": "4.0.8",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0",
+    "toastr": "2.1.4"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
