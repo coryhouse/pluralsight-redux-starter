@@ -109,6 +109,7 @@
       "react": {
         "version": "detect"
       }
-    }
+    },
+    "root": true
   }
 }
