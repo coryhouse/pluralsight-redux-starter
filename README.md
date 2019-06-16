@@ -1,3 +1,7 @@
+# NOTE: This repo is archived. 
+
+This repo contains code from the previous version of [Building Applications in React and Redux in ES6](http://www.pluralsight.com/author/cory-house). For the latest code, see the exercise files on the course page on Pluralsight. 
+
 # Starter Kit for [Building Applications in React and Redux in ES6](http://www.pluralsight.com/author/cory-house) on Pluralsight
 
 ## Get Started
